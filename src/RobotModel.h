@@ -47,7 +47,7 @@ public:
 	double GetGearPotReading();
 	void RefreshIni();
 	void ResetEncoders();
-
+	double GetAngle();
 	//Speed controllers
 	Spark *leftDriveMotorA, *leftDriveMotorB, *rightDriveMotorA,
 			*rightDriveMotorB;
@@ -56,7 +56,7 @@ public:
 	Ini *pini;
 
 	Talon *gearTilterMotor, *gearIntakeMotor;
-
+	AnalogGyro *gyro;
 	AnalogPotentiometer *gearPot;
 
 	Encoder *leftDriveEncoder, *rightDriveEncoder;
