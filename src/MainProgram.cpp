@@ -89,7 +89,7 @@ class MainProgram : public frc::IterativeRobot {
     }
 
     void TeleopInit() {
-        motionController = new MotionController();
+        motionController = new MotionController(robot);
         lights->SetEnabledRoutine();
         auton->Stop();
         RefreshAllIni();

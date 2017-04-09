@@ -8,6 +8,7 @@
 #include "WPILib.h"
 #include "RobotModel.h"
 #include "Ports.h"
+#include "Params.h"
 #include <math.h>
 
 //RobotModel constructor: inits all variables and objects
@@ -33,10 +34,10 @@ RobotModel::RobotModel() {
 	climberMotor->SetSafetyEnabled(false);
 
 	leftDriveEncoder->SetReverseDirection(false);
-	leftDriveEncoder->SetDistancePerPulse(((1.0) / (250.0)) * ((4.0) * (M_PI)));
+	leftDriveEncoder->SetDistancePerPulse(ENCODER_REV_PER_PULSES * WHEELS_CIRCUMFERENCE_IN);
 	leftDriveEncoder->SetSamplesToAverage(1);
 	rightDriveEncoder->SetReverseDirection(false);
-	rightDriveEncoder->SetDistancePerPulse(((1.0) / (250.0)) * ((4.0) * (M_PI)));
+	rightDriveEncoder->SetDistancePerPulse(ENCODER_REV_PER_PULSES * WHEELS_CIRCUMFERENCE_IN);
 	rightDriveEncoder->SetSamplesToAverage(1);
 
 	leftDriveMotorA->SetSafetyEnabled(false);

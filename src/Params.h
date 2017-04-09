@@ -2,6 +2,16 @@
 #define PARAMS_H
 #include "WPILib.h"
 
+
+// Physical parameters
+static const double WHEELS_CIRCUMFERENCE_IN            = ((4.0) * (M_PI)); //Diameter (inches) x PI
+static const double WHEELS_CIRCUMFERENCE_METERS        = ((0.1016) * (M_PI)); //Diameter (meters) x PI
+
+static const double ENCODER_PULSES_PER_REV			   = 250.0; // revolution / pulse
+static const double ENCODER_REV_PER_PULSES   		   = (1.0) / (ENCODER_PULSES_PER_REV); // pulse / revolution
+
+static const double ROBOT_VELOCITY_MAX                 = 5.36448; //this is an estimate
+
 //Params.h: Preferences for the robot
 static bool SQUARE_DRIVE_AXIS_INPUT                    = true;
 static const bool USE_ARCADE_DRIVE                     = true;
