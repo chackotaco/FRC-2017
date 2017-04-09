@@ -44,7 +44,8 @@ class MainProgram : public frc::IterativeRobot {
         dashboardLogger = new DashboardLogger(robot, humanControl);
         climberController = new ClimberController(robot, humanControl);
         gearController = new GearController(robot, humanControl);
-        auton = new Auto(visionController, driveController, robot, gearController, lights);
+        motionController = new MotionController(robot);
+        auton = new Auto(visionController, driveController, robot, gearController, motionController, lights);
 
         //Initializes timekeeper variables
         currTimeSec = 0.0;
@@ -89,7 +90,6 @@ class MainProgram : public frc::IterativeRobot {
     }
 
     void TeleopInit() {
-        motionController = new MotionController(robot);
         lights->SetEnabledRoutine();
         auton->Stop();
         RefreshAllIni();

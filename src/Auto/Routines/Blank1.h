@@ -9,9 +9,10 @@
 #define SRC_AUTO_ROUTINES_BLANK1_H_
 #include "../AutoRoutine.h"
 #include "../../LightsController.h"
+
 class Blank1 : public AutoRoutine {
  public:
-    Blank1(RobotModel* robot, DriveController* driveTrain, GearController* gearController, LightsController* lights);
+    Blank1(RobotModel* robot, DriveController* driveTrain, GearController* gearController, MotionController *motion, LightsController* lights);
     void Prestart();
     virtual ~Blank1();
  protected:
@@ -21,6 +22,7 @@ class Blank1 : public AutoRoutine {
     DriveController* driveTrain;
     GearController* gearController;
     LightsController* lights;
+    MotionController *motion;
 };
 
 #endif /* SRC_AUTO_ROUTINES_BLANK1_H_ */

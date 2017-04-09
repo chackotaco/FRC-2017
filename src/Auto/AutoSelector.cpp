@@ -7,7 +7,7 @@
 
 #include "AutoSelector.h"
 
-AutoSelector::AutoSelector(VisionController *vision, RobotModel* robot, DriveController* kDrive, GearController* gearController, LightsController* lights) {
+AutoSelector::AutoSelector(VisionController *vision, RobotModel* robot, DriveController* kDrive, GearController* gearController, MotionController *motion, LightsController* lights) {
 
   autoRoutines = new vector<AutoRoutine*>();
   RegisterAutonomous(new DoNothingRoutine());
@@ -17,7 +17,7 @@ AutoSelector::AutoSelector(VisionController *vision, RobotModel* robot, DriveCon
   RegisterAutonomous(new RightGear(vision, robot, kDrive, gearController, lights));
   RegisterAutonomous(new PassAutoLine(robot, kDrive, gearController, lights));
   RegisterAutonomous(new BoilerFirstHopper(robot, kDrive, gearController, lights));
-  RegisterAutonomous(new Blank1(robot, kDrive, gearController, lights));
+  RegisterAutonomous(new Blank1(robot, kDrive, gearController, motion, lights));
   RegisterAutonomous(new Blank2(robot, kDrive, gearController, lights));
   RegisterAutonomous(new Blank3(robot, kDrive, gearController, lights));
 

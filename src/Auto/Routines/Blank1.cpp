@@ -7,10 +7,11 @@
 
 #include "Blank1.h"
 
-Blank1::Blank1(RobotModel* robot, DriveController* driveTrain, GearController* gearController, LightsController* lights) {
+Blank1::Blank1(RobotModel* robot, DriveController* driveTrain, GearController* gearController, MotionController *motion, LightsController* lights) {
     this->robot = robot;
     this->driveTrain = driveTrain;
     this->gearController = gearController;
+    this->motion = motion;
     this->lights = lights;
 }
 

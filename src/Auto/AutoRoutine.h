@@ -12,6 +12,7 @@
 #include <Auto/Action/DriveSetPointStraightAction.h>
 #include "WPILib.h"
 #include <iostream>
+#include "../MotionController.h"
 #include "Action/Action.h"
 #include "Action/DriveIntervalAction.h"
 #include "Action/DriveSetPointRotateAction.h"
