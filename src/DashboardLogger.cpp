@@ -26,6 +26,11 @@ void DashboardLogger::UpdateData() {
 	PutGamePadButtonPress();
 	SmartDashboard::PutNumber("DEBUG_FPGATimestamp", robot->timer->GetFPGATimestamp());
 	SmartDashboard::PutNumber("POT_GearTilterPot", robot->gearPot->Get());
+	SmartDashboard::PutNumber("GYRO_Angle", robot->GetAngle());
+	SmartDashboard::PutNumber("METERS_LEFTDRIVE_ENC_GetDistance()", 0.0254 * robot->leftDriveEncoder->GetDistance());
+	SmartDashboard::PutNumber("METERS_RIGHTDRIVE_ENC_GetDistance()", 0.0254 * robot->rightDriveEncoder->GetDistance());
+	SmartDashboard::PutNumber("RAW_LEFTDRIVE_ENC_GetDistance()", robot->leftDriveEncoder->Get());
+	SmartDashboard::PutNumber("RAW_RIGHTDRIVE_ENC_GetDistance()", robot->rightDriveEncoder->Get());
 }
 
 
@@ -35,6 +40,11 @@ void DashboardLogger::UpdateEssentialData() {
 	SmartDashboard::PutNumber("LEFTDRIVE_ENC_GetDistance()", robot->leftDriveEncoder->GetDistance());
 	SmartDashboard::PutNumber("RIGHTDRIVE_ENC_GetDistance()", robot->rightDriveEncoder->GetDistance());
 	SmartDashboard::PutNumber("POT_GearTilterPot", robot->gearPot->Get());
+	SmartDashboard::PutNumber("GYRO_Angle", robot->GetAngle());
+	SmartDashboard::PutNumber("METERS_LEFTDRIVE_ENC_GetDistance()", 0.0254 * robot->leftDriveEncoder->GetDistance());
+	SmartDashboard::PutNumber("METERS_RIGHTDRIVE_ENC_GetDistance()", 0.0254 * robot->rightDriveEncoder->GetDistance());
+	SmartDashboard::PutNumber("RAW_LEFTDRIVE_ENC_GetDistance()", robot->leftDriveEncoder->Get());
+	SmartDashboard::PutNumber("RAW_RIGHTDRIVE_ENC_GetDistance()", robot->rightDriveEncoder->Get());
 }
 
 /*  double GetVoltage(); //returns the voltage

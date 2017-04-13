@@ -16,10 +16,10 @@ Blank1::Blank1(RobotModel* robot, DriveController* driveTrain, GearController* g
 }
 
 void Blank1::Prestart() {
-
 }
 void Blank1::Routine() {
-
+	SmartDashboard::PutString("REACHED HERE", "hello");
+	MotionProfile(robot, motion, 15);
 }
 
 

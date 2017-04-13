@@ -21,7 +21,7 @@ public:
 	double GetLeftOutput();
 	double GetRightOutput();
 
-	int POINT_LENGTH = 6;
+	int POINT_LENGTH = 2;
 	double wheelbase_width = 0.644525; //distance from center of left wheels to center of right wheels in meters (25.375 in)
 
 private:

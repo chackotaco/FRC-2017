@@ -20,6 +20,7 @@
 #include "Action/VisionSetpointXAction.h"
 #include "Action/GearLifterUpAction.h"
 #include "Action/GearLifterDownAction.h"
+#include "Action/MotionProfileAction.h"
 
 class AutoRoutine {
 public:
@@ -39,6 +40,7 @@ public:
   void VisionSetpointX(VisionController *vision, DriveController *drive, RobotModel *robot, double setpoint, double maxSpeed, double timeout, bool waitForTimeout, LightsController *lights);
   void GearLifterUp(RobotModel *robot, DriveController* kDrive, GearController *gearController, double desired_distance, double maxSpeed, double timeout, bool waitForTimeout);
   void GearLifterDown(RobotModel *robot, DriveController* kDrive, GearController *gearController, double desired_distance, double maxSpeed, double timeout, bool waitForTimeout);
+  void MotionProfile(RobotModel *robot, MotionController *motion, double timeout);
 
 void WaitTime(double distance);
 protected:

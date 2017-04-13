@@ -58,3 +58,7 @@ void AutoRoutine::GearLifterUp(RobotModel *robot, DriveController* kDrive, GearC
 void AutoRoutine::GearLifterDown(RobotModel *robot, DriveController* kDrive, GearController *gearController, double desired_distance, double maxSpeed, double timeout, bool waitForTimeout){
   RunAction(new GearLifterDownAction(robot, kDrive, gearController, desired_distance, maxSpeed, timeout, waitForTimeout));
 }
+
+void AutoRoutine::MotionProfile(RobotModel *robot, MotionController *motion, double timeout){
+	RunAction(new MotionProfileAction(robot, motion, timeout));
+}

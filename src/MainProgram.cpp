@@ -51,6 +51,8 @@ class MainProgram : public frc::IterativeRobot {
         currTimeSec = 0.0;
         lastTimeSec = 0.0;
         deltaTimeSec = 0.0;
+    	SmartDashboard::PutString("REACHED HERE", "bye");
+        SmartDashboard::PutString("INITmotionACTION", "nope");
     }
  private:
     void RobotInit() {
@@ -87,6 +89,9 @@ class MainProgram : public frc::IterativeRobot {
         //Autonoumous is running in a thread called by "auton->Start();"
         dashboardLogger->UpdateData();  //Joystick data does NOT update during autonomous
         visionController->Update();
+        motionController->UpdateOutputs();
+		SmartDashboard::PutNumber("MOTION_LEFT", motionController->GetLeftOutput());
+		SmartDashboard::PutNumber("MOTION_RIGHT", motionController->GetRightOutput());
     }
 
     void TeleopInit() {
